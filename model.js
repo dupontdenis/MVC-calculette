@@ -9,10 +9,12 @@ export default class Model {
 
 
     appendNumber(number, callback) {
-
+        console.log(`Model: ${number} appended to currentOperand`);
         this.currentOperand = this.currentOperand.toString() + number.toString()
-        console.log(this.currentOperand)
+
         if (callback) {
+            console.log(`Model: CurrentOperand is updated with ${this.currentOperand}`);
+
             callback(this.currentOperand);
         }
     }
