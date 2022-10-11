@@ -30,21 +30,19 @@ export default class View {
 	 * @param {Function} handler Function called on synthetic event.
 	 */
 	bindAppendNumber(handler) {
-
-        $delegate(this.$calculatorGrid, '[data-number]', 'click', ( {target} ) => {
+		$delegate(this.$calculatorGrid, '[data-number]', 'click', ({ target }) => {
 			const number = target.dataset.number;
-            console.log(number)
+			console.log(`View: ${number} clicked`);
 			if (number) {
 				handler(number);
 			}
 		});
 	}
-
-    updateCurrentOperand (number) {
-        // console.log(number)
-        this.currentOperandTextElement.innerText = number;
-    }
-
+	
+	updateCurrentOperand(number) {
+		console.log(`View : CurrentOperand is updated ${number}`);
+		this.currentOperandTextElement.innerText = number;
+	}
 
 
 }
